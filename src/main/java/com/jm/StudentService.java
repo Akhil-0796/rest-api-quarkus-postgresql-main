@@ -1,6 +1,5 @@
 package com.jm;
 
-import com.jm.config.Traced;
 import com.jm.model.Student;
 import com.jm.repo.StudentRepo;
 
@@ -13,12 +12,10 @@ public class StudentService {
     @Inject
     private StudentRepo studentRepo;
 
-    @Traced
     public void add(Student student) {
         studentRepo.persist(student);
     }
 
-    @Traced
     public List<Student> findAll() {
         return (List<Student>) studentRepo.findAll();
     }
